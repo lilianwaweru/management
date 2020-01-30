@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="container">
+    {% for master in masters %}
+    <p>{{master.first_name}}</p>
+    <p>{{master.other_names}}</p>
+    <p>{{master.nssf_number}}</p>
+    <p>{{master.nhif_number}}</p>
+    <p>{{master.date_of_birth}}</p>
+    <p>{{master.employee_number}}</p>
+    <p>{{master.employee_position}}</p>
+    {% endfor %}
+
+</div>
+{% endblock %}
