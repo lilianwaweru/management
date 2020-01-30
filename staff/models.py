@@ -24,7 +24,7 @@ class Education(models.Model):
     course = models.CharField(max_length =100)
     other_certificates = models.CharField(max_length =100)
 
-    # objects = models.Education()
+    objects = models.Manager()
 
     def save_Education(self):
         self.save()
@@ -36,5 +36,6 @@ class Work(models.Model):
     duration = models.IntegerField()
     tasks = models.CharField(max_length =1000)
 
+    objects = models.Manager()
 
 
