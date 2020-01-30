@@ -1,5 +1,5 @@
 from django import forms
-from .models import Master,Education
+from .models import Master,Education,Work
 
 class MasterForm(forms.ModelForm):
     class Meta:
@@ -11,3 +11,9 @@ class EducationForm(forms.ModelForm):
     class Meta:
         model = Education
         fields = ['secondary_shool','higher_education','level_of_education','course','other_certificates']
+
+
+class WorkForm(forms.ModelForm):
+    class Meta:
+        model = Work
+        fields = ['company','position','duration','tasks']

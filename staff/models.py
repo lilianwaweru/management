@@ -23,8 +23,18 @@ class Education(models.Model):
     level_of_education = models.CharField(max_length =100)
     course = models.CharField(max_length =100)
     other_certificates = models.CharField(max_length =100)
-    
 
+    # objects = models.Education()
+
+    def save_Education(self):
+        self.save()
+
+
+class Work(models.Model):
+    company = models.CharField(max_length =100)
+    position = models.CharField(max_length =100)
+    duration = models.IntegerField()
+    tasks = models.CharField(max_length =1000)
 
 
 
