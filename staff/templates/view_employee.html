@@ -1,7 +1,42 @@
 
 {% extends 'base.html'%}
 {% block content %}
-<div class="container">
+<div class="container-fluid">
+  
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4">
+          {% for master in masters %}
+          <!-- Card -->
+          <div class="card">
+      
+            <!--Card image-->
+            <div class="view overlay">
+              <img class="card-img-top" src="/static/{{master.image}}"
+                alt="Card image cap">
+              <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+      
+            <!--Card content-->
+            <div class="card-body">
+      
+              <!--Title-->
+              <h4 class="card-title">Card title</h4>
+              <!--Text-->
+              
+              <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+              <button type="button" class="btn btn-light-blue btn-md">Read more</button>
+      
+            </div>
+      
+          </div>
+          <!-- Card -->
+          {% endfor %}
+        </div>
+        
+        </div>
+      </div>
     {% for master in masters %}
     <p>{{master.first_name}}</p>
     <p>{{master.other_names}}</p>
@@ -10,6 +45,7 @@
     <p>{{master.date_of_birth}}</p>
     <p>{{master.employee_number}}</p>
     <p>{{master.employee_position}}</p>
+    <img src="/static/{{master.image}}"></img>
     {% endfor %}
 
 </div>

@@ -4,7 +4,7 @@ from .models import Master,Education,Work
 class MasterForm(forms.ModelForm):
     class Meta:
         model = Master
-        fields = ['first_name','other_names','identification_number','nssf_number','nhif_number','date_of_birth','employee_number','employee_position']
+        fields = ['first_name','other_names','identification_number','nssf_number','nhif_number','date_of_birth','employee_number','employee_position','image']
 
 
 class EducationForm(forms.ModelForm):

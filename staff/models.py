@@ -9,7 +9,8 @@ class Master(models.Model):
     nhif_number = models.IntegerField()
     date_of_birth= models.DateField()
     employee_number = models.IntegerField()
-    employee_position = models.CharField(max_length =30) 
+    employee_position = models.CharField(max_length =30)
+    image = models.ImageField(upload_to = 'static/images/',blank=True)
     
     objects = models.Manager()
 
