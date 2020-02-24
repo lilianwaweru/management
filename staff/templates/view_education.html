@@ -15,6 +15,12 @@
           
           <thead>
             <tr>
+              <th class="bottom-th">First Name
+              </th>
+              <th class="bottom-th">OtherName  
+              </th>
+              <th class="bottom-th">Department
+              </th>
               <th class="bottom-th">Secondary School
               </th>
               <th class="bottom-th">Higher Education
@@ -23,7 +29,6 @@
               </th>
               <th class="bottom-th">Course
               </th>
-
               <th class="bottom-th">Other Certificates
               </th>
               
@@ -33,39 +38,16 @@
           <tbody>
             {% for educations in educations %}
             <tr>
-              <td class="pt-3-half" contenteditable="true">Lorry </td>
-              <td class="pt-3-half" contenteditable="true">Kibera</td>
-              <td class="pt-3-half" contenteditable="true">Peter</td>
-              <td class="pt-3-half" contenteditable="true">Eddy</td>
+              <td class="pt-3-half" contenteditable="true">{{educations.first_name }} </td>
+              <td class="pt-3-half" contenteditable="true">{{educations.other_names}} </td>
+              <td class="pt-3-half" contenteditable="true">{{educations.department}} </td>
+              <td class="pt-3-half" contenteditable="true">{{educations.secondary_shool}} </td>
+              <td class="pt-3-half" contenteditable="true">{{educations.higher_education}}</td>
+              <td class="pt-3-half" contenteditable="true">{{educations.level_of_education}}</td>
+              <td class="pt-3-half" contenteditable="true">{{educations.course}}</td>
 
-              <td class="pt-3-half" contenteditable="true">2011/04/25</td>
+              <td class="pt-3-half" contenteditable="true">{{educations.other_certificates}}</td>
     
-              <td>
-                <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td>
-            </tr>
-            <tr>
-              <td class="pt-3-half" contenteditable="true">Pick Up</td>
-              <td class="pt-3-half" contenteditable="true">Moringa</td>
-              <td class="pt-3-half" contenteditable="true">Jemila</td>
-              <td class="pt-3-half" contenteditable="true">Lilian</td>
-
-              <td class="pt-3-half" contenteditable="true">2011/07/25</td>
-              
-              <td>
-                <span class="table-remove"><button type="button"
-                    class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
-              </td>
-            </tr>
-            <tr>
-              <td class="pt-3-half" contenteditable="true">Van</td>
-              <td class="pt-3-half" contenteditable="true">Junction</td>
-              <td class="pt-3-half" contenteditable="true">Lilian</td>
-              <td class="pt-3-half" contenteditable="true">Anthony</td>
-
-              <td class="pt-3-half" contenteditable="true">2009/01/12</td>
-             
               <td>
                 <span class="table-remove"><button type="button"
                     class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
@@ -82,13 +64,13 @@
 
 
 
-{% for educations in educations %}
+<!-- {% for educations in educations %}
 <p>{{educations.secondary_shool}}</p>
 <p>{{educations.higher_education}}</p>
 <p>{{educations.level_of_education}}</p>
 <p>{{educations.course}}</p>
 <p>{{educations.other_certificates}}</p>
-{% endfor %}
+{% endfor %} -->
 
 
 </div>

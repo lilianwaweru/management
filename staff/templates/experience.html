@@ -1,12 +1,111 @@
 {% extends 'base.html'%}
+{% load static%}
+{% load bootstrap4 %}
 {% block content %}
-<div class="container">
-    {% for works in works %}
-    <p>{{works.company}}</p>
-    <p>{{works.position}}</p>
-    <p>{{works.duration}}</p>
-    <p>{{works.tasks}}</p>
-    {% endfor %}
+<!DOCTYPE html>
+<html>
 
-</div>
-{% endblock %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/staff.css' %}"> {% endblock %}
+</head>
+<br>
+<br>
+<br>
+<h1 style="text-align: center;">Employee's Details</h1>
+
+<body>
+  <div class="container-fluid">
+    {% for work in works %}
+    {%if work.image%}
+    <img src="{{work.image.url}}">
+    ​
+    {%endif%}
+
+
+    <!-- {% endfor %} -->
+<table>
+    <table class="table table-bordered">
+      <thead>
+        <!-- {% for work in works %} -->
+       
+          <th scope="col">Identification number</th>
+          <th scope="col">Nssf number</th>
+          <th scope="col">Nhif Number</th>
+          <th scope="col">Date Of Birth</th>
+          <th scope="col">Employee Number</th>
+          <th scope="col">Employee Position</th>
+        
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pt-3-half" contenteditable="true">{{work.identification_number}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.nssf_number}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.nhif_number}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.date_of_birth}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.employee_number}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.employee_position}}</td>
+        </tr>
+      </tbody>
+      <!-- {% endfor %} -->
+    </table>
+    <h1 style="text-align: center;">Education Background</h1>
+    <table class="table table-bordered">
+      <thead>
+        <!-- {% for work in works %} -->
+        <tr>
+          <th scope="col">Secondary School</th>
+          <th scope="col">Higher Education</th>
+          <th scope="col">Level Of Education</th>
+          <th scope="col">Course</th>
+          <th scope="col">Other Certificates</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pt-3-half" contenteditable="true">{{work.secondary_shool}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.higher_education}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.level_of_education}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.course}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.other_certificates}} </td>
+        </tr>
+      </tbody>
+      <!-- {% endfor %} -->
+    </table>
+    <h1 style="text-align: center;">Work Experience</h1>
+    <table class="table table-bordered">
+      <thead>
+        <!-- {% for work in works %} -->
+        <tr>
+          <th scope="col">Company Worked Before</th>
+          <th scope="col">Position</th>
+          <th scope="col">Duration</th>
+          <th scope="col">Tasks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="pt-3-half" contenteditable="true">{{work.company}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.position}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.duration}} </td>
+          <td class="pt-3-half" contenteditable="true">{{work.tasks}} </td>
+        </tr>
+      </tbody>  
+    </table>
+</table>
+{% endfor %}
+    
+    
+   
+  </div>
+  
+  {% endblock %}
+</body>
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %} {% endblock %}
+
+</html>
